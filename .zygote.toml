@@ -1,0 +1,22 @@
+[function.login]
+image = "ghcr.io/evgnomon/salute"
+
+[function.salute.configs.github]
+[function.salute.configs.userpass]
+
+[store.stream.main]
+in = "stream"
+allow.io = ["salute"]
+
+[table.user]
+id.type = "INT"
+id.auto_increment = true
+id.primary_key = true
+password = "string"
+email = "string"
+inactive = "bool"
+requires = ["timestamps"]
+
+[table.user.index]
+unique = true
+columns = ["email"]
